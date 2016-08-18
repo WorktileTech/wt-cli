@@ -1,0 +1,34 @@
+{
+  "name": "wt-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WorktileTech/wt-cli.git"
+  },
+  "author": "YCTech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WorktileTech/wt-cli/issues"
+  },
+  "homepage": "https://github.com/WorktileTech/wt-cli#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "commander": "^2.9.0",
+    "generator-foreach": "^0.1.0",
+    "inquirer": "^1.1.2",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-json": "^1.1.3",
+    "koa-router": "^5.4.0",
+    "pm2": "^1.1.3"
+  },
+  "devDependencies": {
+    "request": "^2.74.0"
+  }
+}

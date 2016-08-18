@@ -6,7 +6,9 @@ request.post(upgradeUrl, {
         'wt-docker-token': '7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f'
     },
     json: {
-        scripts: ['ls']
+        scripts: [
+            `ls
+            echo "hello world"`]
     }
 }, function (err, resp, body) {
     console.log(body);

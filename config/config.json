@@ -1,6 +1,8 @@
 {
   "version": "2.1.22",
   "preScriptFilePath": "/Users/xuhaifeng/IT/10_YC/atinc/wtdock/src/server/test.sh",
+  "scriptFilePath": "/Users/xuhaifeng/IT/10_YC/atinc/wtdock/src/server/test.sh node init",
+  "configScriptFilePath": "/Users/xuhaifeng/IT/10_YC/atinc/wtdock/src/server/test.sh",
   "postScriptFilePath": "/Users/xuhaifeng/IT/10_YC/atinc/wtdock/src/server/test.sh",
   "dockerBaseHost": "http://docker.worktile.com",
   "token": "7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f"

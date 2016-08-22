@@ -11,36 +11,45 @@ const getConfig = function () {
     }
 };
 
+const checkScriptsPath = function (scripts) {
+    scripts.forEach(function (script) {
+        const filePath = script.split(' ')[0];
+        if (!fs.existsSync(filePath)) {
+            throw new Error(`script file (${filePath}) is not exists.`)
+        }
+    });
+
+};
+
 module.exports = {
-    getConfig    : getConfig,
-    getVersion   : function () {
+    getConfig  : getConfig,
+    getVersion : function () {
         return getConfig().version;
     },
-    getScriptPath: function () {
+    getScripts : function () {
+        const config = getConfig();
         //先执行此脚本 停止 docker 获取最新镜像
-        const preBashPath = getConfig().preScriptFilePath;
+        const preScript = config.preScript;
         //最后执行此脚本  启动 docker 服务
-        const postBashPath = getConfig().postScriptFilePath;
+        const postScript = config.postScript;
         //执行升级脚本,扫库等操作
-        const upgradeBashPath = getConfig().scriptFilePath;
+        const upgradeScript = config.upgradeScript;
         //替换配置文件脚本
-        const configBashPath = getConfig().configScriptFilePath;
-        const result = {};
-        if (preBashPath && fs.existsSync(preBashPath)) {
-            result.preBashPath = preBashPath;
-        }
-        if (postBashPath && fs.existsSync(postBashPath)) {
-            result.postBashPath = postBashPath;
-        }
-        if (upgradeBashPath && fs.existsSync(upgradeBashPath)) {
-            result.upgradeBashPath = upgradeBashPath;
-        }
-        if (configBashPath && fs.existsSync(configBashPath)) {
-            result.configBashPath = configBashPath;
-        }
+        const configScript = config.configScript;
+        const scriptsRootDir = config.scriptsRootDir;
+        const rootDir = scriptsRootDir.indexOf('/') === 0 ? scriptsRootDir : path.resolve(__dirname, scriptsRootDir);
+        const result = {
+            rootDir      : rootDir,
+            preScript    : rootDir + preScript,
+            upgradeScript: rootDir + upgradeScript,
+            configScript : rootDir + configScript,
+            postScript   : rootDir + postScript
+        };
+        console.log(result);
+        checkScriptsPath([result.preScript, result.upgradeScript, result.configScript, result.postScript]);
         return result;
     },
-    verifyToken  : function (token) {
+    verifyToken: function (token) {
         return token === getConfig().token;
     }
 };

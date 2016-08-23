@@ -4,5 +4,7 @@ require('commander')
     .version(require('../package').version)
     .usage('<command> [options]')
     .command('config', 'config bash file')
-    .command('start', 'start client')
+    .command('start', 'start client server')
+    .command('stop', 'stop client server')
+    .command('status', 'view client server status')
     .parse(process.argv);

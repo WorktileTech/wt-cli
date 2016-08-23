@@ -1,10 +1,10 @@
 {
   "version": "2.1.22",
   "scriptsRootDir": "../bash",
+  "dockerBaseHost": "http://docker.worktile.com",
+  "token": "7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f",
   "preScript": "/pre-upgrade.sh --action=pull --images=\"{{images}}\"",
   "upgradeScript": "/update-db.sh --version={{version}}",
   "configScript": "/update-conf.sh --config {{configFilePath}}",
-  "postScript": "/post-upgrade.sh --services=\"{{services}}\"",
-  "dockerBaseHost": "http://docker.worktile.com",
-  "token": "7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f"
+  "postScript": "/post-upgrade.sh --services=\"{{services}}\""
 }

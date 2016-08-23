@@ -1,3 +1,4 @@
+/*global module,require,__dirname*/
 const fs = require('fs');
 const path = require('path');
 
@@ -51,5 +52,15 @@ module.exports = {
     },
     verifyToken: function (token) {
         return token === getConfig().token;
+    },
+    save       : function (config) {
+        const configString = JSON.stringify(config, null, 2);
+        fs.writeFile(path.resolve(__dirname, './config.json'), configString, {flag: 'w'}, function (err) {
+            if(err) {
+                console.error(err);
+            } else {
+                console.log('Save success');
+            }
+        });
     }
 };

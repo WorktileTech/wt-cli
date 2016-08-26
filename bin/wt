@@ -6,5 +6,6 @@ require('commander')
     .command('config', 'config bash file')
     .command('start', 'start client server')
     .command('stop', 'stop client server')
+    .command('delete', 'delete client server status')
     .command('status', 'view client server status')
     .parse(process.argv);

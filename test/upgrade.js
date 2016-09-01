@@ -1,5 +1,5 @@
 const request = require('request');
-const upgradeUrl = "http://localhost:7777/api/upgrade";
+const upgradeUrl = "http://localhost:9004/api/upgrade";
 
 request.post(upgradeUrl, {
     headers: {

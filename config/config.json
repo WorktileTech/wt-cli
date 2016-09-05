@@ -1,10 +1,10 @@
 {
-  "version": "2.1.22",
+  "version": "2.1.27",
   "scriptsRootDir": "../bash",
   "dockerBaseHost": "http://docker.worktile.com",
-  "token": "7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f",
+  "token": "ee2a0c40-bce4-45d8-8587-fb83e5bf9754",
   "preScript": "/pre-upgrade.sh --images=\"{{images}}\" --registry-username=\"{{registryUsername}}\" --registry-password=\"{{registryPassword}}\"",
   "upgradeScript": "/update-db.sh --version={{version}}",
-  "configScript": "/update-conf.sh --config-web={{configFilePath}}",
+  "configScript": "/update-conf.sh --config-web={{configFilePath}} --config-im={{imConfigFilePath}}",
   "postScript": "/post-upgrade.sh --services=\"{{services}}\""
 }

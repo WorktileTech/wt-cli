@@ -5,6 +5,6 @@
   "token": "7dd896fe-6da5-4e06-8cad-b1bab8e1cf8f",
   "preScript": "/pre-upgrade.sh --images=\"{{images}}\" --registry-username=\"{{registryUsername}}\" --registry-password=\"{{registryPassword}}\"",
   "upgradeScript": "/update-db.sh --version={{version}}",
-  "configScript": "/update-conf.sh --config={{configFilePath}}",
+  "configScript": "/update-conf.sh --config-web={{configFilePath}}",
   "postScript": "/post-upgrade.sh --services=\"{{services}}\""
 }

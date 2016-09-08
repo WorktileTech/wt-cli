@@ -5,6 +5,6 @@
   "token": "ee2a0c40-bce4-45d8-8587-fb83e5bf9754",
   "preScript": "/pre-upgrade.sh --images=\"{{images}}\" --registry-username=\"{{registryUsername}}\" --registry-password=\"{{registryPassword}}\"",
   "upgradeScript": "/update-db.sh --version={{version}}",
-  "configScript": "/update-conf.sh --config-web={{configFilePath}} --config-im={{imConfigFilePath}}",
+  "configScript": "/update-conf.sh --config-web={{webConfigFilePath}} --config-im={{imConfigFilePath}} --config-profile={{profileConfigFilePath}} --config-license={{licenceConfigFilePath}} --config-redis={{redisConfigFilePath}}",
   "postScript": "/post-upgrade.sh --services=\"{{services}}\""
 }

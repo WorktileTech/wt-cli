@@ -4,7 +4,7 @@
   "dockerBaseHost": "http://docker.worktile.com",
   "token": "ee2a0c40-bce4-45d8-8587-fb83e5bf9754",
   "preScript": "/pre-upgrade.sh --images=\"{{images}}\" --registry-username=\"{{registryUsername}}\" --registry-password=\"{{registryPassword}}\"",
-  "upgradeScript": "/update-db.sh --version={{version}}",
+  "upgradeScript": "/update-db.sh --version-from={{versionFrom}} --version-to={{versionTo}}",
   "configScript": "/update-conf.sh --config-web={{webConfigFilePath}} --config-im={{imConfigFilePath}} --config-profile={{profileConfigFilePath}} --config-license={{licenseConfigFilePath}} --config-redis={{redisConfigFilePath}} --config-nginx-main={{nginxMainConfigFilePath}} --config-nginx-im={{nginxIMConfigFilePath}} --config-nginx-box={{nginxBoxConfigFilePath}} --config-nginx-seaweed={{nginxSeaweedConfigFilePath}} --config-ssl-certificate={{sslCertificateConfigFilePath}} --config-ssl-certificate-key={{sslCertificateKeyConfigFilePath}}",
   "postScript": "/post-upgrade.sh --services=\"{{services}}\""
 }
